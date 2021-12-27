@@ -5,13 +5,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import ru.gb.gbrest.service.feign.CartDtoApi;
 import ru.gb.gbrest.service.feign.ManufacturerDtoApi;
 
 import java.util.Optional;
 
 @Configuration
 @EnableJpaAuditing(auditorAwareRef = "auditAwareBean")
-@EnableFeignClients(basePackageClasses = {ManufacturerDtoApi.class})
+@EnableFeignClients(basePackageClasses = {ManufacturerDtoApi.class, CartDtoApi.class})
 public class ShopConfig {
 
     @Bean
